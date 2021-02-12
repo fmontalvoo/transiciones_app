@@ -41,9 +41,14 @@ class PageOne extends StatelessWidget {
           //       scale:
           //           Tween<double>(begin: 0.0, end: 1.0).animate(curveAnimation));
 
-          return RotationTransition(
+          // return RotationTransition(
+          //     child: child,
+          //     turns:
+          //         Tween<double>(begin: 0.0, end: 1.0).animate(curveAnimation));
+
+          return FadeTransition(
               child: child,
-              turns:
+              opacity:
                   Tween<double>(begin: 0.0, end: 1.0).animate(curveAnimation));
         });
   }
