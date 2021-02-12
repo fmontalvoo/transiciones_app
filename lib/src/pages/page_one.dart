@@ -30,11 +30,16 @@ class PageOne extends StatelessWidget {
           final curveAnimation =
               CurvedAnimation(parent: animation, curve: Curves.easeInOut);
 
-          return SlideTransition(
-            position: Tween<Offset>(begin: Offset(0.5, 1.0), end: Offset.zero)
-                .animate(curveAnimation),
-            child: child,
-          );
+          // return SlideTransition(
+          //   child: child,
+          //   position: Tween<Offset>(begin: Offset(0.5, 1.0), end: Offset.zero)
+          //       .animate(curveAnimation),
+          // );
+
+          return ScaleTransition(
+              child: child,
+              scale:
+                  Tween<double>(begin: 0.0, end: 1.0).animate(curveAnimation));
         });
   }
 }
